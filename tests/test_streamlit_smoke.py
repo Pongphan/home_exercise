@@ -3,6 +3,7 @@
 from __future__ import annotations
 
 from pathlib import Path
+from types import SimpleNamespace
 
 import pytest
 from streamlit.testing.v1 import AppTest
@@ -68,6 +69,16 @@ def test_authenticated_page_renders(
     module_name: str, test_user: dict, monkeypatch: pytest.MonkeyPatch
 ) -> None:
     monkeypatch.setenv("FITJOURNEY_TEST_PAGE", module_name)
+    if module_name == "fitjourney.pages.form_coach":
+        # streamlit-webrtc requires a live browser session manager, which
+        # Streamlit's AppTest mock runtime intentionally does not provide.
+        import streamlit_webrtc
+
+        monkeypatch.setattr(
+            streamlit_webrtc,
+            "webrtc_streamer",
+            lambda **_kwargs: SimpleNamespace(state=SimpleNamespace(playing=False)),
+        )
     page = AppTest.from_file("tests/page_harness.py", default_timeout=20)
     page.session_state["user"] = test_user
     page.run()

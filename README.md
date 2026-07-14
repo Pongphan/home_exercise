@@ -74,9 +74,12 @@ Open <http://localhost:8501>. Camera access requires a secure context in product
 
 1. Push this folder to a repository.
 2. Create an app with `home_exercise/app.py` as the entry point.
-3. Use Python 3.11 and `home_exercise/requirements.txt`.
-4. Remember that Community Cloud's local filesystem is ephemeral. Attach an external database for durable history across app reboots.
-5. WebRTC uses a public STUN server by default. Restricted networks may require a TURN server; configure credentials as Streamlit secrets rather than source code.
+3. Open **Advanced settings** before the first deployment and select **Python 3.12**. MediaPipe 0.10.21 has a CPython 3.12 Linux wheel but no CPython 3.13 wheel.
+4. Community Cloud will discover `home_exercise/requirements.txt` beside the entrypoint. If this folder is the repository root, it also discovers `packages.txt` for OpenCV's Debian libraries.
+5. If `home_exercise` is a subdirectory of a larger repository, copy `home_exercise/packages.txt` to the repository root because Community Cloud installs `packages.txt` from there.
+6. If an existing app was created with a different Python version, delete and redeploy it; Community Cloud cannot change Python in place.
+7. Remember that Community Cloud's local filesystem is ephemeral. Attach an external database for durable history across app reboots.
+8. WebRTC uses a public STUN server by default. Restricted networks may require a TURN server; configure credentials as Streamlit secrets rather than source code.
 
 ## Tests
 
