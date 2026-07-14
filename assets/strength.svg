@@ -1,0 +1,6 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 360" role="img" aria-label="Strength exercise illustration">
+<defs><linearGradient id="g" x2="1" y2="1"><stop stop-color="#14332b"/><stop offset="1" stop-color="#2f715e"/></linearGradient></defs>
+<rect width="800" height="360" rx="30" fill="url(#g)"/><circle cx="665" cy="72" r="112" fill="#d9f36a"/>
+<g fill="none" stroke="#f9faf4" stroke-width="18" stroke-linecap="round" stroke-linejoin="round"><circle cx="400" cy="90" r="30" fill="#ff8066" stroke="none"/><path d="M400 125v105M400 160l-105 38M400 160l105 38M400 230l-72 85M400 230l72 85"/><path d="M245 175v48M555 175v48M215 175h60M525 175h60"/></g>
+<text x="42" y="62" fill="#8bffca" font-family="Arial" font-size="22" font-weight="700" letter-spacing="4">STRENGTH</text><text x="42" y="322" fill="#dfeae6" font-family="Arial" font-size="20">CONTROL · RANGE · POWER</text>
+</svg>

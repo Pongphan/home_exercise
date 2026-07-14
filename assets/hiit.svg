@@ -1,0 +1,6 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 360" role="img" aria-label="HIIT exercise illustration">
+<rect width="800" height="360" rx="30" fill="#4a2224"/><path d="M660-20l170 170-200 200-170-170z" fill="#ff8066" opacity=".78"/>
+<g fill="none" stroke="#fff7ec" stroke-width="18" stroke-linecap="round" stroke-linejoin="round"><circle cx="385" cy="78" r="29" fill="#d9f36a" stroke="none"/><path d="M385 115v105M385 145l-97-68M385 145l93-74M385 220l-88 90M385 220l96 89"/></g>
+<path d="M146 100l28 28-28 28M105 100l28 28-28 28" fill="none" stroke="#ff9a84" stroke-width="12"/>
+<text x="42" y="62" fill="#ff9a84" font-family="Arial" font-size="22" font-weight="700" letter-spacing="4">HIIT</text><text x="42" y="330" fill="#f4d9d1" font-family="Arial" font-size="20">WORK · RECOVER · REPEAT</text>
+</svg>

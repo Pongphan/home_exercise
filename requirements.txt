@@ -1,0 +1,11 @@
+streamlit>=1.41,<2
+pandas>=2.1,<3
+plotly>=5.18,<7
+reportlab>=4.0,<5
+# MediaPipe depends on opencv-contrib-python; use that single cv2 provider to
+# avoid conflicting OpenCV wheels in the same environment.
+opencv-contrib-python>=4.9,<5
+# cv_engine.py uses the legacy mp.solutions Pose API, removed in MediaPipe 0.10.30.
+mediapipe>=0.10.14,<0.10.30
+streamlit-webrtc>=0.47.9,<1
+av>=12,<16

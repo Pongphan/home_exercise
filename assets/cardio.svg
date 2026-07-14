@@ -1,0 +1,6 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 360" role="img" aria-label="Cardio exercise illustration">
+<rect width="800" height="360" rx="30" fill="#163d52"/><circle cx="680" cy="65" r="125" fill="#ff8066"/>
+<g fill="none" stroke="#f9faf4" stroke-width="18" stroke-linecap="round" stroke-linejoin="round"><circle cx="420" cy="76" r="29" fill="#d9f36a" stroke="none"/><path d="M402 116l-45 94 85 25 45-91M378 165l-88-3M455 170l72 63M360 210l-85 78M442 235l92 57"/></g>
+<path d="M145 130h130M115 175h120M158 220h92" stroke="#7cc7ce" stroke-width="12" stroke-linecap="round"/>
+<text x="42" y="62" fill="#9fe3e7" font-family="Arial" font-size="22" font-weight="700" letter-spacing="4">CARDIO</text><text x="42" y="322" fill="#dcecf0" font-family="Arial" font-size="20">RHYTHM · ENGINE · ENERGY</text>
+</svg>

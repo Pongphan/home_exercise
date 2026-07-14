@@ -1,0 +1,5 @@
+# Camera-free installation for the core tracker.
+streamlit>=1.41,<2
+pandas>=2.1,<3
+plotly>=5.18,<7
+reportlab>=4.0,<5
