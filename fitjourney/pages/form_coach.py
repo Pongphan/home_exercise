@@ -20,7 +20,10 @@ def render() -> None:
     try:
         from streamlit_webrtc import RTCConfiguration, WebRtcMode, webrtc_streamer
     except ImportError:
-        st.error("Camera dependencies are not installed. Install the full requirements file and restart the app.")
+        st.error(
+            "Camera dependencies are optional and are not installed in this deployment. "
+            "For the full camera coach, install requirements-camera.txt or use the Docker build."
+        )
         return
     left, right = st.columns([2, 1])
     with left:

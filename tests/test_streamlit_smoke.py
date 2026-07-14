@@ -71,14 +71,18 @@ def test_authenticated_page_renders(
     monkeypatch.setenv("FITJOURNEY_TEST_PAGE", module_name)
     if module_name == "fitjourney.pages.form_coach":
         # streamlit-webrtc requires a live browser session manager, which
-        # Streamlit's AppTest mock runtime intentionally does not provide.
-        import streamlit_webrtc
-
-        monkeypatch.setattr(
-            streamlit_webrtc,
-            "webrtc_streamer",
-            lambda **_kwargs: SimpleNamespace(state=SimpleNamespace(playing=False)),
-        )
+        # Streamlit's AppTest mock runtime intentionally does not provide. In
+        # the Cloud core build the optional dependency is absent altogether.
+        try:
+            import streamlit_webrtc
+        except ModuleNotFoundError:
+            pass
+        else:
+            monkeypatch.setattr(
+                streamlit_webrtc,
+                "webrtc_streamer",
+                lambda **_kwargs: SimpleNamespace(state=SimpleNamespace(playing=False)),
+            )
     page = AppTest.from_file("tests/page_harness.py", default_timeout=20)
     page.session_state["user"] = test_user
     page.run()

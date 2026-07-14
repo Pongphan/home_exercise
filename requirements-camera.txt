@@ -1,0 +1,11 @@
+# Full local/Docker build with the optional webcam form coach.
+-r requirements.txt
+numpy==1.26.4
+protobuf==4.25.9
+
+# MediaPipe depends on opencv-contrib-python; keep one cv2 provider. The camera
+# engine uses mp.solutions, which was removed after MediaPipe 0.10.21.
+opencv-contrib-python==4.11.0.86
+mediapipe==0.10.21
+streamlit-webrtc==0.75.1
+av==15.1.0

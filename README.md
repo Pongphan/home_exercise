@@ -56,7 +56,7 @@ pip install -r requirements.txt
 streamlit run app.py
 ```
 
-For a camera-free installation, use `pip install -r requirements-core.txt`. The rest of the app remains available; the Camera coach page will display a dependency notice.
+`requirements.txt` is the camera-free core build used by Streamlit Community Cloud. To enable the webcam coach locally, install `pip install -r requirements-camera.txt` instead. The Docker image also uses the full camera build.
 
 The database is created at `data/fitjourney.db`. Set `FITJOURNEY_DB=/persistent/path/app.db` to place it on a mounted volume. SQLite is suitable for a small single-instance deployment. For horizontally scaled production, replace `fitjourney/db.py` with a Supabase/Postgres repository while preserving its function interface.
 
@@ -74,12 +74,10 @@ Open <http://localhost:8501>. Camera access requires a secure context in product
 
 1. Push this folder to a repository.
 2. Create an app with `home_exercise/app.py` as the entry point.
-3. Open **Advanced settings** before the first deployment and select **Python 3.12**. MediaPipe 0.10.21 has a CPython 3.12 Linux wheel but no CPython 3.13 wheel.
-4. Community Cloud will discover `home_exercise/requirements.txt` beside the entrypoint. If this folder is the repository root, it also discovers `packages.txt` for OpenCV's Debian libraries.
-5. If `home_exercise` is a subdirectory of a larger repository, copy `home_exercise/packages.txt` to the repository root because Community Cloud installs `packages.txt` from there.
-6. If an existing app was created with a different Python version, delete and redeploy it; Community Cloud cannot change Python in place.
-7. Remember that Community Cloud's local filesystem is ephemeral. Attach an external database for durable history across app reboots.
-8. WebRTC uses a public STUN server by default. Restricted networks may require a TURN server; configure credentials as Streamlit secrets rather than source code.
+3. Community Cloud discovers the lightweight `home_exercise/requirements.txt` beside the entrypoint. It intentionally omits native camera packages so the core tracker can install reliably.
+4. Python 3.12 is recommended, though the core build does not depend on the legacy MediaPipe wheel.
+5. Remember that Community Cloud's local filesystem is ephemeral. Attach an external database for durable history across app reboots.
+6. The camera coach remains available in the Docker/local full build. WebRTC deployments may additionally require a TURN server; configure credentials as secrets rather than source code.
 
 ## Tests
 
